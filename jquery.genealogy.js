@@ -81,3 +81,5 @@ jQuery.fn.nextUncles = jQuery.fn.nextAunts;
 jQuery.fn.nephews = jQuery.fn.nieces;
 jQuery.fn.prevNephews = jQuery.fn.prevNieces;
 jQuery.fn.nextNephews = jQuery.fn.nextNieces;
+
+jQuery.fn.brothers = jQuery.fn.sisters = jQuery.fn.siblings;
