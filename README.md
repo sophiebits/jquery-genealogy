@@ -64,6 +64,10 @@ A _fun_ jQuery plugin for your (or for your element's) extended relatives.
 
     All of the element's siblings' children that come after the element in the document, returned in document order (closest to the original element first).
 
+- **el.brothers(), el.sisters()**
+
+    All of the elements brothers or sisters (siblings).
+
 ## About
 
 Inspired by one of John Resig's offhand remarks.
