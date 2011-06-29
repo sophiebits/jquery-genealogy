@@ -1,86 +1,90 @@
-// jQuery Genealogy
-// https://github.com/spicyj/jquery-genealogy
-//
-// Copyright (c) 2011 Ben Alpert
-// Released under the MIT License
+/*
+ * jQuery Genealogy
+ * https://github.com/spicyj/jquery-genealogy
+ *
+ * Copyright (c) 2011 Ben Alpert
+ * Released under the MIT License
+ */
 
-jQuery.fn.extend({
-	grandchildren: function() {
-		return this.children().children();
-	},
+(function($) {
+	$.fn.extend({
+		grandchildren: function() {
+			return this.children().children();
+		},
 
-	greatGrandchildren: function() {
-		return this.grandchildren().children();
-	},
+		greatGrandchildren: function() {
+			return this.grandchildren().children();
+		},
 
-	grandparent: function() {
-		return this.parent().parent();
-	},
+		grandparent: function() {
+			return this.parent().parent();
+		},
 
-	greatGrandparent: function() {
-		return this.grandparent().parent();
-	},
+		greatGrandparent: function() {
+			return this.grandparent().parent();
+		},
 
-	aunts: function() {
-		return this.parent().siblings();
-	},
+		aunts: function() {
+			return this.parent().siblings();
+		},
 
-	prevAunt: function() {
-		return this.parent().prev();
-	},
+		prevAunt: function() {
+			return this.parent().prev();
+		},
 
-	prevAunts: function() {
-		return this.parent().prevAll();
-	},
+		prevAunts: function() {
+			return this.parent().prevAll();
+		},
 
-	nextAunt: function() {
-		return this.parent().next();
-	},
+		nextAunt: function() {
+			return this.parent().next();
+		},
 
-	nextAunts: function() {
-		return this.parent().nextAll();
-	},
+		nextAunts: function() {
+			return this.parent().nextAll();
+		},
 
-	cousins: function() {
-		return this.aunts().children();
-	},
+		cousins: function() {
+			return this.aunts().children();
+		},
 
-	prevCousins: function() {
-		// Return closest cousins first (by document order)
-		return this.prevAunts().map( function () {
-			return jQuery( this ).children().get().reverse();
-		} );
-	},
+		prevCousins: function() {
+			// Return closest cousins first (by document order)
+			return this.prevAunts().map( function () {
+				return $( this ).children().get().reverse();
+			} );
+		},
 
-	nextCousins: function() {
-		return this.nextAunts().children();
-	},
+		nextCousins: function() {
+			return this.nextAunts().children();
+		},
 
-	nieces: function() {
-		return this.siblings().children();
-	},
+		nieces: function() {
+			return this.siblings().children();
+		},
 
-	prevNieces: function() {
-		// Return closest nieces first (by document order)
-		return this.prevAll().map( function () {
-			return jQuery( this ).children().get().reverse();
-		} );
-	},
+		prevNieces: function() {
+			// Return closest nieces first (by document order)
+			return this.prevAll().map( function () {
+				return $( this ).children().get().reverse();
+			} );
+		},
 
-	nextNieces: function() {
-		return this.nextAll().children();
-	}
-});
+		nextNieces: function() {
+			return this.nextAll().children();
+		}
+	});
 
-jQuery.fn.uncles = jQuery.fn.aunts;
-jQuery.fn.prevUncle = jQuery.fn.prevAunt;
-jQuery.fn.prevUncles = jQuery.fn.prevAunts;
-jQuery.fn.nextUncle = jQuery.fn.nextAunt;
-jQuery.fn.nextUncles = jQuery.fn.nextAunts;
+	$.fn.uncles = $.fn.aunts;
+	$.fn.prevUncle = $.fn.prevAunt;
+	$.fn.prevUncles = $.fn.prevAunts;
+	$.fn.nextUncle = $.fn.nextAunt;
+	$.fn.nextUncles = $.fn.nextAunts;
 
-jQuery.fn.nephews = jQuery.fn.nieces;
-jQuery.fn.prevNephews = jQuery.fn.prevNieces;
-jQuery.fn.nextNephews = jQuery.fn.nextNieces;
+	$.fn.nephews = $.fn.nieces;
+	$.fn.prevNephews = $.fn.prevNieces;
+	$.fn.nextNephews = $.fn.nextNieces;
 
-jQuery.fn.brothers = jQuery.fn.sisters = jQuery.fn.siblings;
-jQuery.fn.father = jQuery.fn.mother = jQuery.fn.parent;
+	$.fn.brothers = $.fn.sisters = $.fn.siblings;
+	$.fn.father = $.fn.mother = $.fn.parent;
+})(jQuery);
