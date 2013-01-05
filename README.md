@@ -78,4 +78,4 @@ A _fun_ jQuery plugin for your (or for your element's) extended relatives.
 
 Inspired by one of John Resig's offhand remarks.
 
-Please submit bug reports on GitHub issues or send me a note at spicyjalapeno@gmail.com if you have any questions or feature suggestions.
+Please submit bug reports on GitHub issues or send me a note at ben@benalpert.com if you have any questions or feature suggestions.
